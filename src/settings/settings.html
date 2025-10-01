@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - StudySync</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #3c4043;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .settings-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .setting-item label {
+            font-size: 1.1em;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 24px;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #4285f4;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .profile-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="settings-container">
+        <h1>Settings</h1>
+
+        <div class="profile-section">
+            <h2>Profile</h2>
+            <div class="setting-item">
+                <span>Profile picture</span>
+                <button>Change</button>
+            </div>
+            <div class="setting-item">
+                <span>Account settings</span>
+                <a href="#">Manage</a>
+            </div>
+            <div class="setting-item">
+                <span>Change name</span>
+                <a href="#">Go to your account settings</a>
+            </div>
+        </div>
+
+        <h2>Comments Settings</h2>
+        <div class="setting-item">
+            <label for="commentsPosts">Comments on your posts</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="commentsPosts" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <label for="commentsMention">Comments that mention you</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="commentsMention" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <label for="privateComments">Private comments on work</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="privateComments" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <h2>Classes you’re enrolled in</h2>
+
+        <div class="setting-item">
+            <label for="workPosts">Work and other posts from teachers</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="workPosts" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <label for="returnedWork">Returned work and grades from your teachers</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="returnedWork" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <label for="invitations">Invitations to join classes as a student</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="invitations" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <label for="dueDateReminders">Due-date reminders for your work</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="dueDateReminders" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <h2>Class notifications</h2>
+        <p>These notifications will help you keep track of your progress and deadlines.</p>
+
+        <h2>Notifications</h2>
+        <div class="setting-item">
+            <span>Email</span>
+            <p>These settings apply to the notifications you get by email.</p>
+        </div>
+        <div class="setting-item">
+            <label for="allowEmailNotifications">Allow email notifications</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="allowEmailNotifications" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+</body>
+</html>
